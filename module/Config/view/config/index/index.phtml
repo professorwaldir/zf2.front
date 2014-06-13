@@ -1,1 +1,113 @@
-Configure seu ambiente
+<?php
+
+   // print_r($this->timezone);
+
+?>
+
+<div class="container">
+
+    <div class="row">
+        <div class="span12">
+            <div class="widget widget-form">
+                <div class="widget-header">
+                    <h3><i class="icon-pencil"></i>Configuracoes</h3>
+                </div>
+                <div class="widget-content">
+                    <form class="form-horizontal" action="config/cadastro" method="post">
+
+                        <div class="control-group">
+                               <label class="control-label" for="nome">Nome</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="nome" id="nome">
+                                    <p class="help-block">Digite o nome</p>
+                                </div>
+
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="nome">Email</label>
+                            <div class="controls">
+                                <input type="text" class="input-large" name="email" id="email">
+                                <p class="help-block">Digite o nome</p>
+                            </div>
+
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="nome">Idiomas</label>
+                            <div class="controls">
+                                <select class="input-large" name="idioma" id="idioma">
+                                       <option value="">-Selecione Idioma</option>
+
+                                        <?php
+
+                                            foreach($this->idiomas as $index => $value) {
+
+                                                echo "<option value='$index'>$value</option>";
+
+                                            }
+
+                                        ?>
+
+                                  </select>
+                            </div>
+
+                        </div>
+
+
+                        <div class="control-group">
+                            <label class="control-label" for="nome">Moeda</label>
+                            <div class="controls">
+                                <select class="input-large" name="moeda" id="moeda">
+                                    <option value="">-Selecione Idioma</option>
+
+                                    <?php
+
+                                    foreach($this->moedas as $index => $value) {
+
+                                        echo "<option value='$index'>$value</option>";
+
+                                    }
+
+                                    ?>
+
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="nome">Fuso Horario</label>
+                            <div class="controls">
+                                <select multiple="multiple" class="input-large" name="timezone" id="timezone">
+                                    <option value="">-Selecione Idioma</option>
+
+                                    <?php
+
+                                    foreach($this->timezone as $index => $value) {
+
+                                        echo "<option value='$index'>$value</option>";
+
+                                    }
+
+                                    ?>
+
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">Salvar</button>
+                            <button type="submit" class="btn btn-danger btn-large">Cancelar</button>
+                        </div>
+
+                    </form>
+                 </div>
+            </div>
+          </div>
+    </div>
+
+
+
+</div>
